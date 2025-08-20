@@ -1,16 +1,46 @@
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fafafa;
+}
+
+/* Navigation */
+nav {
+  background: #222;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 12px 0;
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
   margin: 0; padding: 0;
-  line-height: 1.6;
 }
-header {
-  background: #222; color: white;
-  padding: 2rem; text-align: center;
+nav ul li {
+  margin: 0 20px;
 }
-section {
-  background: #444; color: white;
-  padding: 1.5rem;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
-h2 {
-  color: #444;
+nav ul li a:hover {
+  color: #00bcd4;
 }
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  padding: 120px 20px 40px;
+  text-align: center;
+}
+#about { background: #f5f5f5; }
+#projects { background: #e0f7fa; }
+#contact { background: #ffe0b2; }
+
+/* Hide sections by default */
+.hidden { display: none; }
