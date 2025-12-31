@@ -22,7 +22,7 @@ nav ul {
     list-style: none; 
     display: flex; 
     /* Changed from flex-end to flex-start to move links to the left */
-    justify-content: flex-start; 
+    justify-content: flex-end; 
     margin: 0; 
     padding: 0 40px; /* Added padding so links aren't touching the screen edge */
 }
