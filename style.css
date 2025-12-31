@@ -1,24 +1,60 @@
-body { font-family: "Times New Roman", Times, serif; line-height: 1.4;  /* tighter spacing like LaTeX */
-      font-size: 18px; /* slightly larger for readability */ 
-      margin: 0; background: #fafafa; } /* Navigation */ 
-nav { background: #222; 
-     position: fixed; top: 0; 
-     left: 0; width: 100%; 
-     padding: 12px 0; z-index: 1000; } 
-nav ul { list-style: none; 
-        display: flex; 
-        justify-content: flex-end; 
-        margin: 0; padding: 0; } 
-nav ul li { margin: 0 20px; } 
-nav ul li a { color: white; 
-             text-decoration: none; 
-             font-weight: bold; 
-             transition: color 0.3s; } 
-nav ul li a:hover { color: #00bcd4; } 
-/* Sections */ 
-.section { min-height: 100vh; padding: 120px 20px 40px; text-align: center; } 
-#about { background: #f5f5f5; } 
-#projects { background: #e0f7fa; } 
-#contact { background: #ffe0b2; } 
-/* Hide sections by default */ 
-.hidden { display: none; }
+/* General Styles */
+body { 
+    font-family: "Times New Roman", Times, serif; 
+    line-height: 1.4; 
+    font-size: 18px; 
+    margin: 0; 
+    background: #fafafa; 
+}
+
+/* Navigation */
+nav { 
+    background: #222; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 12px 0; 
+    z-index: 1000; 
+}
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    /* Changed from flex-end to flex-start to move links to the left */
+    justify-content: flex-start; 
+    margin: 0; 
+    padding: 0 40px; /* Added padding so links aren't touching the screen edge */
+}
+
+nav ul li { 
+    margin: 0 20px; 
+}
+
+nav ul li a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s; 
+}
+
+nav ul li a:hover { 
+    color: #00bcd4; 
+}
+
+/* Sections */
+.section { 
+    min-height: 100vh; 
+    padding: 120px 40px 40px; /* Added left padding for readability */
+    /* Changed from center to left */
+    text-align: left; 
+}
+
+#about { background: #f5f5f5; }
+#projects { background: #e0f7fa; }
+#contact { background: #ffe0b2; }
+
+/* Hide sections by default */
+.hidden { 
+    display: none; 
+}
