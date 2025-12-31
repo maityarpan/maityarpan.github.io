@@ -35,11 +35,10 @@ nav ul li a:hover {
 }
 
 /* Sections */
-.section {
-  min-height: 100vh;
-  padding: 120px 20px 40px;
-  text-align: left;          /* <-- change from center to left */
-}
+.section{ 
+  min-height: 100vh; 
+  padding: 120px 20px 40px; 
+  text-align: left; }
 
 #about { background: #f5f5f5; }
 #projects { background: #e0f7fa; }
