@@ -1,10 +1,14 @@
 /* General Styles */
 body { 
-    font-family: "Times New Roman", Times, serif; 
-    line-height: 1.4; 
-    font-size: 18px; 
+    /* Font stack: Tries Garamond first, then elegant fallbacks */
+    font-family: Garamond, "Apple Garamond", "Baskerville", "Libre Baskerville", "Times New Roman", serif; 
+    line-height: 1.6; 
+    font-size: 20px; /* Garamond usually needs to be slightly larger for readability */
     margin: 0; 
     background: #fafafa; 
+    color: #222;
+    /* Smooth transition for when sections are toggled */
+    scroll-behavior: smooth;
 }
 
 /* Navigation */
@@ -14,28 +18,30 @@ nav {
     top: 0; 
     left: 0; 
     width: 100%; 
-    padding: 12px 0; 
+    padding: 15px 0; 
     z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav ul { 
     list-style: none; 
     display: flex; 
-    /* This pushes the links to the right */
+    /* Moves the navigation links to the RIGHT */
     justify-content: flex-end; 
     margin: 0; 
-    padding: 0 40px; 
+    padding: 0 10%; /* Matches the section padding for symmetry */
 }
 
 nav ul li { 
-    margin: 0 20px; 
+    margin-left: 30px; 
 }
 
 nav ul li a { 
-    color: white; 
+    color: #f0f0f0; 
     text-decoration: none; 
     font-weight: bold; 
-    transition: color 0.3s; 
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover { 
@@ -45,22 +51,46 @@ nav ul li a:hover {
 /* Sections */
 .section { 
     min-height: 100vh; 
-    /* 10% side padding keeps text from hitting the edges */
+    /* Top padding 120px to clear the fixed nav bar */
+    /* Side padding 10% to keep text away from screen edges */
     padding: 120px 10% 40px; 
+    
+    /* Headlines and container start on the LEFT */
     text-align: left; 
 }
 
-/* Paragraphs within sections will be justified */
+/* Section Headings */
+h1, h2 {
+    font-weight: 600;
+    margin-top: 0;
+    color: #111;
+}
+
+/* Paragraph styling for that "LaTeX" justified look */
 .section p {
     text-align: justify;
     text-justify: inter-word;
+    max-width: 800px; /* Prevents lines from getting too long to read */
+    hyphens: auto;
 }
 
+/* Section Colors */
 #about { background: #f5f5f5; }
 #projects { background: #e0f7fa; }
 #contact { background: #ffe0b2; }
 
-/* Hide sections for the JS script */
+/* Hidden class for script.js */
+/* !important ensures it overrides any background-color display settings */
 .hidden { 
     display: none !important; 
+}
+
+/* Project List Styling */
+#projects ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#projects li {
+    margin-bottom: 10px;
 }
