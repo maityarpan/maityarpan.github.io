@@ -21,10 +21,10 @@ nav {
 nav ul { 
     list-style: none; 
     display: flex; 
-    /* Changed from flex-end to flex-start to move links to the left */
-    justify-content: flex-start; 
+    /* This keeps your navigation links on the RIGHT side */
+    justify-content: flex-end; 
     margin: 0; 
-    padding: 0 40px; /* Added padding so links aren't touching the screen edge */
+    padding: 0 40px; 
 }
 
 nav ul li { 
@@ -45,9 +45,19 @@ nav ul li a:hover {
 /* Sections */
 .section { 
     min-height: 100vh; 
-    padding: 120px 40px 40px; /* Added left padding for readability */
-    /* Changed from center to left */
+    padding: 120px 10% 40px; /* Using % padding keeps text away from the edges */
+    
+    /* This aligns your text to the LEFT */
     text-align: left; 
+    
+    /* This ensures paragraphs are justified (straight edges on both sides) */
+    /* while keeping the overall flow starting from the left */
+    text-justify: inter-word;
+}
+
+/* If you want the actual paragraph text to be justified like a book: */
+.section p {
+    text-align: justify;
 }
 
 #about { background: #f5f5f5; }
