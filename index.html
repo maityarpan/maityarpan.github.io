@@ -4,9 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arpan</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #111;
+      padding: 15px 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end; /* moves items to right */
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    /* Sections */
+    .section {
+      padding: 60px 30px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
+
 <body>
+
   <!-- Navigation Bar -->
   <nav>
     <ul>
@@ -19,23 +71,23 @@
   <!-- Sections -->
   <section id="about" class="section">
     <h1>Hi, I'm Arpan 👋</h1>
-    <p>student</p>
-    <p></p>
+    <p>Student</p>
   </section>
 
   <section id="projects" class="section hidden">
     <h2>Projects</h2>
     <ul>
-      <li><b>project</b> – topic</li>
+      <li><b>Project</b> – Topic</li>
     </ul>
   </section>
 
   <section id="contact" class="section hidden">
     <h2>Contact</h2>
-    <p><a href="https://github.com/maityarpan">GitHub</a></p>
+    <p>
+      <a href="https://github.com/maityarpan" target="_blank">GitHub</a>
+    </p>
   </section>
 
-  <script src="script.js"></script>
 </body>
 </html>
 
