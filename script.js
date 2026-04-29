@@ -19,3 +19,16 @@ links.forEach(link => {
     showSection(target);
   });
 });
+
+const toggleButton = document.getElementById("theme-toggle");
+
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // Change icon
+  if (document.body.classList.contains("dark-mode")) {
+    toggleButton.textContent = "☀️";
+  } else {
+    toggleButton.textContent = "🌙";
+  }
+});
