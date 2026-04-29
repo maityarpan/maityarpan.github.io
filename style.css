@@ -94,3 +94,49 @@ h1, h2 {
 #projects li {
     margin-bottom: 10px;
 }
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode nav {
+    background: #1e1e1e;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #ffffff;
+}
+
+body.dark-mode nav ul li a {
+    color: #f0f0f0;
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #4dd0e1;
+}
+
+/* Dark versions of sections */
+body.dark-mode #home {
+    background: #1a1a1a;
+}
+
+body.dark-mode #projects {
+    background: #162024;
+}
+
+body.dark-mode #contact {
+    background: #2a2118;
+}
+
+/* Toggle Button */
+#theme-toggle {
+    margin-left: 30px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
