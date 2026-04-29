@@ -9,7 +9,7 @@ function showSection(id) {
 }
 
 // Default view = About
-showSection('#about');
+showSection('#home');
 
 // Listen for nav clicks
 links.forEach(link => {
