@@ -53,10 +53,6 @@ nav ul {
     align-items: center;
 
     margin: 0;
-
-    /*
-       Same horizontal spacing as the sections.
-    */
     padding: 0 10%;
 }
 
@@ -88,18 +84,10 @@ nav ul li a:hover {
 ========================= */
 
 .section {
-    /*
-       100vh includes the padding because
-       border-box is used.
-    */
     min-height: 100vh;
 
     box-sizing: border-box;
 
-    /*
-       10% left/right padding creates an
-       80% content area.
-    */
     padding: 120px 10% 40px;
 
     text-align: left;
@@ -120,6 +108,13 @@ h2 {
 
     margin-top: 0;
 
+    color: #111;
+
+    transition: color 0.3s ease;
+}
+
+
+h3 {
     color: #111;
 
     transition: color 0.3s ease;
@@ -154,12 +149,6 @@ h2 {
 }
 
 
-/*
-   Main Home content occupies the
-   available vertical space above
-   the contact band.
-*/
-
 .home-content {
     flex: 1;
 
@@ -175,15 +164,6 @@ h2 {
 ========================= */
 
 .contact-band {
-    /*
-       This width is 100% of the section's
-       content area.
-
-       Since .section already has 10%
-       padding on each side, the contact
-       band occupies 80% of the monitor.
-    */
-
     width: 100%;
 
     box-sizing: border-box;
@@ -194,10 +174,6 @@ h2 {
 
     display: grid;
 
-    /*
-       Divide the available width into
-       three equal columns.
-    */
     grid-template-columns: 1fr 1fr 1fr;
 
     align-items: center;
@@ -206,14 +182,10 @@ h2 {
 }
 
 
-/* Individual contact columns */
-
 .contact-item {
     min-width: 0;
 }
 
-
-/* LEFT */
 
 .contact-left {
     text-align: left;
@@ -225,14 +197,10 @@ h2 {
 }
 
 
-/* CENTER */
-
 .contact-center {
     text-align: center;
 }
 
-
-/* RIGHT */
 
 .contact-right {
     text-align: right;
@@ -240,8 +208,6 @@ h2 {
     line-height: 1.4;
 }
 
-
-/* Contact links */
 
 .contact-band a {
     color: #222;
@@ -283,6 +249,136 @@ h2 {
 
 
 /* =========================
+   RHYTHMS
+========================= */
+
+#rhythms {
+    min-height: 100vh;
+}
+
+
+/* Three-column layout */
+
+.rhythm-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-top: 45px;
+}
+
+
+/* Individual block */
+
+.rhythm-card {
+    border-top: 2px solid #222;
+
+    padding-top: 18px;
+
+    min-width: 0;
+}
+
+
+.rhythm-card h3 {
+    margin: 0 0 5px 0;
+
+    font-size: 26px;
+
+    font-weight: 600;
+}
+
+
+.rhythm-description {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    font-size: 17px;
+
+    opacity: 0.7;
+
+    text-align: left !important;
+}
+
+
+/* =========================
+   RHYTHMS SCROLLABLE LIST
+========================= */
+
+.rhythm-scroll {
+    height: 330px;
+
+    overflow-y: auto;
+
+    padding-right: 10px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #999 transparent;
+}
+
+
+/* Each linked entry */
+
+.rhythm-scroll a {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #d0d0d0;
+
+    color: #222;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+.rhythm-scroll a:hover {
+    color: #00bcd4;
+
+    padding-left: 5px;
+}
+
+
+.rhythm-meta {
+    font-size: 15px;
+
+    white-space: nowrap;
+
+    opacity: 0.65;
+}
+
+
+/* Chrome / Safari scrollbar */
+
+.rhythm-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.rhythm-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.rhythm-scroll::-webkit-scrollbar-thumb {
+    background: #999;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
    DARK MODE
 ========================= */
 
@@ -299,7 +395,8 @@ body.dark-mode nav {
 
 
 body.dark-mode h1,
-body.dark-mode h2 {
+body.dark-mode h2,
+body.dark-mode h3 {
     color: #ffffff;
 }
 
@@ -314,14 +411,12 @@ body.dark-mode nav ul li a:hover {
 }
 
 
-/* Sections */
-
 body.dark-mode .section {
     background: #1a1a1a;
 }
 
 
-/* Contact band */
+/* Contact band dark mode */
 
 body.dark-mode .contact-band {
     border-top-color: #555;
@@ -335,6 +430,35 @@ body.dark-mode .contact-band a {
 
 body.dark-mode .contact-band a:hover {
     color: #4dd0e1;
+}
+
+
+/* Rhythms dark mode */
+
+body.dark-mode .rhythm-card {
+    border-top-color: #f0f0f0;
+}
+
+
+body.dark-mode .rhythm-scroll a {
+    color: #f0f0f0;
+
+    border-bottom-color: #444;
+}
+
+
+body.dark-mode .rhythm-scroll a:hover {
+    color: #4dd0e1;
+}
+
+
+body.dark-mode .rhythm-scroll {
+    scrollbar-color: #666 transparent;
+}
+
+
+body.dark-mode .rhythm-scroll::-webkit-scrollbar-thumb {
+    background: #666;
 }
 
 
@@ -357,6 +481,19 @@ body.dark-mode .contact-band a:hover {
     transition:
         background 0.3s ease,
         color 0.3s ease;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .rhythm-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
 
 
@@ -421,6 +558,27 @@ body.dark-mode .contact-band a:hover {
     .contact-center,
     .contact-right {
         text-align: left;
+    }
+
+
+    /* Rhythms */
+
+    .rhythm-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        margin-top: 35px;
+    }
+
+
+    .rhythm-scroll {
+        height: 260px;
+    }
+
+
+    .rhythm-card h3 {
+        font-size: 24px;
     }
 
 }
