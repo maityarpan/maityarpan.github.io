@@ -1,110 +1,212 @@
-/* General Styles */
-body { 
-    /* Font stack: Tries Garamond first, then elegant fallbacks */
-    font-family: Garamond, "Apple Garamond", "Baskerville", "Libre Baskerville", "Times New Roman", serif; 
-    line-height: 1.6; 
-    font-size: 20px; /* Garamond usually needs to be slightly larger for readability */
-    margin: 0; 
-    background: #fafafa; 
+/* =========================
+   GENERAL STYLES
+========================= */
+
+body {
+    font-family: Garamond, "Apple Garamond", "Baskerville",
+                 "Libre Baskerville", "Times New Roman", serif;
+
+    line-height: 1.6;
+    font-size: 20px;
+
+    margin: 0;
+
+    background: #fafafa;
     color: #222;
 
-    /* Smooth transition for when sections are toggled */
     scroll-behavior: smooth;
 
-    transition: background 0.3s ease, color 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-/* Navigation */
-nav { 
-    background: #222; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    padding: 15px 0; 
-    z-index: 1000; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    background: #222;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 15px 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
     transition: background 0.3s ease;
 }
 
-nav ul { 
-    list-style: none; 
-    display: flex; 
+nav ul {
+    list-style: none;
 
-    /* Moves the navigation links to the RIGHT */
-    justify-content: flex-end; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
-    margin: 0; 
-    padding: 0 10%; /* Matches the section padding for symmetry */
+    margin: 0;
+    padding: 0 10%;
 }
 
-nav ul li { 
-    margin-left: 30px; 
+nav ul li {
+    margin-left: 30px;
 }
 
-nav ul li a { 
-    color: #f0f0f0; 
-    text-decoration: none; 
-    font-weight: bold; 
+nav ul li a {
+    color: #f0f0f0;
+
+    text-decoration: none;
+    font-weight: bold;
     font-size: 18px;
 
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover { 
-    color: #00bcd4; 
+nav ul li a:hover {
+    color: #00bcd4;
 }
 
-/* Sections */
-.section { 
-    min-height: 100vh; 
 
-    /* Top padding clears the fixed nav bar */
-    padding: 120px 10% 40px; 
-    
-    /* Headlines and content aligned left */
-    text-align: left; 
+/* =========================
+   SECTIONS
+========================= */
 
-    /* SAME background for all sections */
+.section {
+    min-height: 100vh;
+
+    padding: 120px 10% 40px;
+
+    box-sizing: border-box;
+
+    text-align: left;
+
     background: #f5f5f5;
 
     transition: background 0.3s ease;
 }
 
-/* Section Headings */
-h1, h2 {
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2 {
     font-weight: 600;
+
     margin-top: 0;
+
     color: #111;
 
     transition: color 0.3s ease;
 }
 
-/* Paragraph styling for clean justified look */
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
 .section p {
     text-align: justify;
     text-justify: inter-word;
 
-    max-width: 800px; /* Prevents lines from getting too long */
+    max-width: 800px;
 
     hyphens: auto;
 }
 
-/* Hidden class for script.js */
-.hidden { 
-    display: none !important; 
+
+/* =========================
+   HOME
+========================= */
+
+#home {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
 }
 
-/* Project List Styling */
-#projects ul {
+
+/* Main home content */
+
+.home-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================
+   CONTACT BAND
+========================= */
+
+.contact-band {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 60px;
+    padding: 20px 0;
+
+    border-top: 1px solid #bdbdbd;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    font-size: 18px;
+}
+
+.contact-band span {
+    font-weight: 600;
+}
+
+.contact-band a {
+    color: #222;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.contact-band a:hover {
+    color: #00bcd4;
+}
+
+
+/* =========================
+   HIDDEN SECTIONS
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   SIGNALS
+========================= */
+
+#signals ul {
     list-style-type: square;
+
     padding-left: 20px;
 }
 
-#projects li {
+#signals li {
     margin-bottom: 10px;
 }
+
 
 /* =========================
    DARK MODE
@@ -132,21 +234,87 @@ body.dark-mode nav ul li a:hover {
     color: #4dd0e1;
 }
 
-/* SAME dark background for all sections */
 body.dark-mode .section {
     background: #1a1a1a;
 }
 
-/* Toggle Button */
+
+/* Contact band dark mode */
+
+body.dark-mode .contact-band {
+    border-top-color: #555;
+}
+
+body.dark-mode .contact-band a {
+    color: #f0f0f0;
+}
+
+body.dark-mode .contact-band a:hover {
+    color: #4dd0e1;
+}
+
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
 #theme-toggle {
     margin-left: 30px;
+
     padding: 6px 12px;
 
     border: none;
     border-radius: 6px;
 
     cursor: pointer;
+
     font-size: 16px;
 
-    transition: background 0.3s ease, color 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        font-size: 18px;
+    }
+
+    nav ul {
+        padding: 0 5%;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    #theme-toggle {
+        margin-left: 10px;
+    }
+
+    .section {
+        padding:
+            100px 7%
+            30px;
+    }
+
+    .contact-band {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+
+        padding: 16px 0;
+    }
 }
