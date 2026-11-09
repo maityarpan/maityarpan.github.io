@@ -218,7 +218,7 @@ h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center center;
 }
 
 .profile-photo.photo-unavailable {
@@ -234,8 +234,8 @@ h3 {
 .home-description p {
     margin: 0 0 24px;
     max-width: 600px;
-    text-align: left;
-    hyphens: none;
+    text-align: justify;
+    hyphens: auto;
 }
 
 .home-description p:last-child {
@@ -275,7 +275,7 @@ body.dark-mode .home-description {
 
     .portrait-frame {
         width: min(100%, 340px);
-        margin-top: 30px;
+        margin: 30px auto 0;
     }
 
     .home-description {
@@ -669,6 +669,12 @@ body.dark-mode .rhythm-scroll::-webkit-scrollbar-thumb {
         padding: 100px 7% 30px;
     }
 
+
+    /* Center and slightly reduce the portrait on phones */
+
+    .portrait-frame {
+        width: min(100%, 300px);
+    }
 
     /* Contact band */
 
