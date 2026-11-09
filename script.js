@@ -32,3 +32,16 @@ toggleButton.addEventListener("click", () => {
     toggleButton.textContent = "🌙";
   }
 });
+
+
+// Hide the image when profile.jpg hasn't been added yet.
+// The initials underneath remain visible until your photo is available.
+const profilePhoto = document.querySelector(".profile-photo");
+if (profilePhoto) {
+  const checkProfilePhoto = () => {
+    profilePhoto.classList.toggle("photo-unavailable", profilePhoto.naturalWidth === 0);
+  };
+  profilePhoto.addEventListener("load", checkProfilePhoto);
+  profilePhoto.addEventListener("error", checkProfilePhoto);
+  if (profilePhoto.complete) checkProfilePhoto();
+}
