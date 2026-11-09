@@ -190,7 +190,7 @@ h3 {
 .portrait-frame {
     position: relative;
     width: min(100%, 370px);
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     margin-top: 36px;
     overflow: hidden;
     background: #e7e6e2;
