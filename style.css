@@ -156,8 +156,10 @@ h3 {
 
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    align-items: center;
-    gap: clamp(42px, 6vw, 100px);
+    align-items: start;
+    align-content: center;
+    column-gap: clamp(42px, 6vw, 100px);
+    row-gap: 0;
 
     width: 100%;
     max-width: 1250px;
@@ -167,8 +169,25 @@ h3 {
 }
 
 .home-intro {
-    min-width: 0;
+    display: contents;
 }
+
+/* On desktop, the portrait and description share the same grid row. */
+.home-intro h1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.home-intro .home-name {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.home-intro .portrait-frame {
+    grid-column: 1;
+    grid-row: 3;
+}
+
 
 .home-intro h1 {
     margin-bottom: 10px;
@@ -228,6 +247,10 @@ h3 {
 }
 
 .home-description {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
+    margin-top: 36px; /* Match the portrait's top margin exactly. */
     min-width: 0;
     border-left: 1px solid #c9c9c9;
     padding-left: clamp(26px, 3.2vw, 52px);
@@ -269,6 +292,10 @@ body.dark-mode .home-description {
         padding: 20px 0 55px;
     }
 
+    .home-intro {
+        display: block;
+    }
+
     .home-intro h1 {
         font-size: clamp(44px, 9vw, 60px);
     }
@@ -283,6 +310,7 @@ body.dark-mode .home-description {
     }
 
     .home-description {
+        margin-top: 0;
         border-left: 0;
         padding-left: 0;
         border-top: 1px solid #c9c9c9;
